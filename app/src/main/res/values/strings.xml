@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Jetpack Android</string>
-    <string name="homefragment_text">HomeFragment</string>
+
+    <string name="homefragment_text">Home Fragment</string>
+    <string name="fragment_home_title">Title</string>
+    <string name="fragment_home_details">Click to see more details</string>
 </resources>

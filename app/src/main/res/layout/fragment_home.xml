@@ -15,15 +15,53 @@
         android:layout_height="match_parent"
         tools:context=".home.HomeFragment">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPhotos"
+            android:layout_width="@dimen/home_fragment_width"
+            android:layout_height="@dimen/home_fragment_width"
+            android:layout_marginLeft="@dimen/home_fragment_margin_left_right"
+            android:layout_marginTop="@dimen/home_fragment_margin_top_bottom"
+            android:layout_marginRight="@dimen/home_fragment_margin_left_right"
+            android:layout_marginBottom="@dimen/home_fragment_margin_top_bottom"
+            android:padding="@dimen/home_fragment_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            app:listData="@{viewModel.properties}"
+            tools:listitem="@layout/list_item" />
+
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.properties.toString()}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/home_fragment_text_view_margin"
+            android:layout_marginTop="@dimen/home_fragment_text_view_margin_top"
+            android:padding="@dimen/home_fragment_text_view_padding"
+            android:text="@string/fragment_home_title"
+            android:textSize="@dimen/home_fragment_text_view_size_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/description"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_home_details"
+            android:textSize="@dimen/home_fragment_text_view_size_subtitle"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewPhotos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

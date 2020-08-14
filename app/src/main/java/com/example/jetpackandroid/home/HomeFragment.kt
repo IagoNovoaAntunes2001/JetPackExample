@@ -1,13 +1,12 @@
 package com.example.jetpackandroid.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jetpackandroid.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,8 +21,9 @@ class HomeFragment : Fragment() {
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater)
 
-        binding.viewModel = viewModel
+        binding.recyclerViewPhotos.adapter = HomeAdapter()
 
+        binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
         return binding.root
     }
