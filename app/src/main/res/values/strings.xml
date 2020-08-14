@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">JetpackAndroid</string>
+    <string name="app_name">Jetpack Android</string>
+    <string name="homefragment_text">HomeFragment</string>
 </resources>
