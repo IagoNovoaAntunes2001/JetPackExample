@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.jetpackandroid.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -21,7 +22,17 @@ class HomeFragment : Fragment() {
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater)
 
-        binding.recyclerViewPhotos.adapter = HomeAdapter()
+        binding.recyclerViewPhotos.adapter = HomeAdapter(HomeAdapter.OnClickListener {
+            viewModel.displayPropertyDetails(it)
+        })
+
+        viewModel.navigateToSelectedProperty.observe(this, Observer {
+            if (it != null) {
+                this.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
+                viewModel.displayPropertyDetailsComplete()
+            }
+        })
 
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)

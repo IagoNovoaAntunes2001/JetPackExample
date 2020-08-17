@@ -9,22 +9,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpackandroid.databinding.ListItemBinding
 import com.example.jetpackandroid.network.model.PhotosItem
 
-//private val onClickListener: OnClickListener
-class HomeAdapter(): ListAdapter<PhotosItem, HomeAdapter.HomeViewHolder>(DiffCallBack) {
-   
+class HomeAdapter(private val onClickListener: OnClickListener) : ListAdapter<PhotosItem, HomeAdapter.HomeViewHolder>(DiffCallBack) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.HomeViewHolder {
         return HomeViewHolder(ListItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val photosItem = getItem(position)
-//        holder.itemView.setOnClickListener {
-//            onClickListener.onClick(PhotosItem)
-//        }
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(photosItem)
+        }
         holder.bind(photosItem)
     }
 
-    class HomeViewHolder(private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class HomeViewHolder(private var binding: ListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(photosItem: PhotosItem) {
             binding.photoItem = photosItem
             binding.executePendingBindings()
@@ -41,8 +41,8 @@ class HomeAdapter(): ListAdapter<PhotosItem, HomeAdapter.HomeViewHolder>(DiffCal
         }
     }
 
-//    class OnClickListener(val clickListener: (PhotosItem: PhotosItem) -> Unit) {
-//        fun onClick(PhotosItem: PhotosItem) = clickListener(PhotosItem)
-//    }
+    class OnClickListener(val clickListener: (photosItem: PhotosItem) -> Unit) {
+        fun onClick(photosItem: PhotosItem) = clickListener(photosItem)
+    }
 
 }

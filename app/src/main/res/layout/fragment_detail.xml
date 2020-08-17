@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.example.jetpackandroid.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ConstraintMatchParent"
+        tools:context=".detail.DetailFragment">
+
+        <ImageView
+            android:id="@+id/imageDetail"
+            style="@style/Image_detail"
+            android:contentDescription="@string/image_contentDescription_details"
+            app:imageUrl="@{myViewModel.selectedProperty.thumbnailUrl}"
+            app:layout_constraintBottom_toTopOf="@+id/imageId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/imageId"
+            style="@style/TextViewTheme_title_detail"
+            android:text="@{myViewModel.selectedProperty.title}"
+            app:layout_constraintBottom_toTopOf="@+id/imageTitle"
+            app:layout_constraintStart_toStartOf="@+id/imageDetail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.24"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/imageTitle"
+            style="@style/TextViewTheme_subtitle_detail"
+            android:text="@{String.valueOf(myViewModel.selectedProperty.id)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageId"
+            app:layout_constraintTop_toBottomOf="@+id/imageId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,7 +1,100 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="ConstraintMatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ConstraintWrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ListItemLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CardViewConstraints">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">@dimen/list_item_card_view_margin</item>
+        <item name="android:radius">60dp</item>
+    </style>
+
+    <style name="TextViewTheme_title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:padding">@dimen/text_size_padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextViewTheme_subtitle">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+        <item name="android:layout_margin">@dimen/text_size_margin</item>
+        <item name="android:padding">@dimen/text_size_padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RecyclerView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+        <item name="android:layout_marginStart">@dimen/home_fragment_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/home_fragment_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/home_fragment_margin_left_right</item>
+        <item name="android:layout_marginBottom">@dimen/home_fragment_margin_top_bottom</item>
+        <item name="android:layout_marginEnd">@dimen/home_fragment_margin_top_bottom</item>
+        <item name="android:padding">@dimen/home_fragment_padding</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="TextViewTheme_title_detail">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:layout_marginTop">@dimen/text_size_margin_top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextViewTheme_subtitle_detail">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+        <item name="android:layout_marginTop">@dimen/text_size_margin_top</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextViewTheme_list_item">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_list_item</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/text_size_margin_list_item</item>
+        <item name="android:padding">@dimen/text_size_padding</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Image_status">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Image_detail">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_margin">@dimen/detail_fragment_margin</item>
+    </style>
+
 </resources>

@@ -4,4 +4,9 @@
     <string name="homefragment_text">Home Fragment</string>
     <string name="fragment_home_title">Title</string>
     <string name="fragment_home_details">Click to see more details</string>
+
+    <string name="fragment_detail_title">Title</string>
+    <string name="fragment_detail_ID">ID image</string>
+    <string name="content_description_image">Image describes the status of the application</string>
+    <string name="image_contentDescription_details">Image of the detail clicked</string>
 </resources>

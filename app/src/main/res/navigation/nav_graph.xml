@@ -8,8 +8,23 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.jetpackandroid.home.HomeFragment"
-        android:label="HomeFragment"
+        android:label="Home Fragment"
         tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.jetpackandroid.detail.DetailFragment"
+        android:label="Detail Fragment"
+        tools:layout="@layout/fragment_detail"
+        >
+        <argument
+        android:name="seleceted"
+        app:argType="com.example.jetpackandroid.network.model.PhotosItem"
         />
+    </fragment>
 
 </navigation>
