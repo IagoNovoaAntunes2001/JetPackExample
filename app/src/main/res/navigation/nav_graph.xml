@@ -8,23 +8,38 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.jetpackandroid.home.HomeFragment"
-        android:label="Home Fragment"
-        tools:layout="@layout/fragment_home"
-        >
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.jetpackandroid.detail.DetailFragment"
-        android:label="Detail Fragment"
-        tools:layout="@layout/fragment_detail"
-        >
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail">
         <argument
-        android:name="seleceted"
-        app:argType="com.example.jetpackandroid.network.model.PhotosItem"
-        />
+            android:name="seleceted"
+            app:argType="com.example.jetpackandroid.network.model.PhotosItem" />
     </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.jetpackandroid.rules.RulesFragment"
+        android:label="Rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.jetpackandroid.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.jetpackandroid
+package com.example.jetpackandroid.utils
 
 import android.view.View
 import android.widget.ImageView
@@ -7,9 +7,9 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.jetpackandroid.R
 import com.example.jetpackandroid.home.HomeAdapter
 import com.example.jetpackandroid.network.model.PhotosItem
-import com.example.jetpackandroid.utils.HomeApiStatus
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
