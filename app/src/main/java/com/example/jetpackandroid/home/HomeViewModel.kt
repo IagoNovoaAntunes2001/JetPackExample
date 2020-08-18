@@ -4,14 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.jetpackandroid.network.model.PhotosItem
-import com.example.jetpackandroid.network.service.HomeRepository
+import com.example.jetpackandroid.repository.home.HomeRepository
+import com.example.jetpackandroid.repository.home.HomeRepositoryContract
 import com.example.jetpackandroid.utils.HomeApiStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
+class HomeViewModel(private val repository: HomeRepositoryContract) : ViewModel() {
 
     private val _status = MutableLiveData<HomeApiStatus>()
     val status: LiveData<HomeApiStatus>
@@ -34,7 +35,7 @@ class HomeViewModel(private val repository: HomeRepository) : ViewModel() {
 
     private fun getPhotosPropierts() {
         coroutineScope.launch {
-            val getPropiertesDeferred = repository.photos
+            val getPropiertesDeferred = repository.getPhotos()
             try {
                 _status.value = HomeApiStatus.LOADING
                 val listResult = getPropiertesDeferred.await()

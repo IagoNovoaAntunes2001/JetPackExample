@@ -2,22 +2,20 @@ package com.example.jetpackandroid.home
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.example.jetpackandroid.R
 import com.example.jetpackandroid.databinding.FragmentHomeBinding
 import com.example.jetpackandroid.network.service.HomeApi
-import com.example.jetpackandroid.network.service.HomeRepository
+import com.example.jetpackandroid.repository.home.HomeRepository
 
 class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by lazy {
-        val repository = HomeRepository(HomeApi.retrofitService)
+        val repository =
+            HomeRepository(HomeApi.RETROFIT_SERVICE)
         val factory = HomeViewModelFactory(repository)
         ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
     }

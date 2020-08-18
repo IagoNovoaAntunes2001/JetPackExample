@@ -16,4 +16,5 @@
     <string name="fragment_rules_title_rules">Rules of the program</string>
 
     <string name="fragment_about_title">About the program</string>
+    <string name="button_delete_title">Delete</string>
 </resources>

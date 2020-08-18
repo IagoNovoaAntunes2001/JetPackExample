@@ -20,5 +20,9 @@
 
     <dimen name="list_item_card_view_margin">10dp</dimen>
 
+    <dimen name="button_margin">30dp</dimen>
+
+    <dimen name="zero_dp">0dp</dimen>
+
     <dimen name="detail_fragment_margin">20dp</dimen>
 </resources>

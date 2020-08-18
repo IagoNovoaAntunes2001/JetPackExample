@@ -22,6 +22,13 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="StyleButton">
+        <item name="android:layout_width">@dimen/zero_dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:background">@color/colorRed</item>
+    </style>
+
     <style name="ListItemLinear">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -31,7 +38,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_margin">@dimen/list_item_card_view_margin</item>
-        <item name="android:radius">60dp</item>
     </style>
 
     <style name="TextViewTheme_title">
@@ -60,8 +66,8 @@
         <item name="android:layout_marginBottom">@dimen/home_fragment_margin_top_bottom</item>
         <item name="android:layout_marginEnd">@dimen/home_fragment_margin_top_bottom</item>
         <item name="android:padding">@dimen/home_fragment_padding</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">@dimen/zero_dp</item>
+        <item name="android:layout_height">@dimen/zero_dp</item>
     </style>
 
     <style name="TextViewTheme_title_detail">
@@ -99,7 +105,7 @@
 
     <style name="Image_detail">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">@dimen/zero_dp</item>
         <item name="android:layout_margin">@dimen/detail_fragment_margin</item>
     </style>
 

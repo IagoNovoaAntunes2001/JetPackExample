@@ -42,5 +42,14 @@
             app:layout_constraintStart_toStartOf="@+id/imageId"
             app:layout_constraintTop_toBottomOf="@+id/imageId" />
 
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/StyleButton"
+            android:text="@string/button_delete_title"
+            android:onClick="@{() -> myViewModel.deleteButton(myViewModel.selectedProperty.id)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
