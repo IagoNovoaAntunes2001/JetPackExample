@@ -26,6 +26,10 @@ class HomeViewModel(private val repository: HomeRepositoryContract) : ViewModel(
     val navigateToSelectedProperty: LiveData<PhotosItem>
         get() = _navigateToSelectedProperty
 
+    private val _navigateToUpdateProperty = MutableLiveData<PhotosItem>()
+    val navigateToUpdateProperty: LiveData<PhotosItem>
+        get() = _navigateToUpdateProperty
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
@@ -50,6 +54,14 @@ class HomeViewModel(private val repository: HomeRepositoryContract) : ViewModel(
 
     fun displayPropertyDetails(photosItem: PhotosItem) {
         _navigateToSelectedProperty.value = photosItem
+    }
+
+    fun displayPropertyDetailsLongClick(photosItem: PhotosItem) {
+        _navigateToUpdateProperty.value = photosItem
+    }
+
+    fun displayPropertyUpdateComplete() {
+        _navigateToUpdateProperty.value = null
     }
 
     fun displayPropertyDetailsComplete() {

@@ -1,6 +1,7 @@
 package com.example.jetpackandroid.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -30,6 +31,8 @@ class HomeFragment : Fragment() {
 
         binding.recyclerViewPhotos.adapter = HomeAdapter(HomeAdapter.OnClickListener {
             viewModel.displayPropertyDetails(it)
+        }, HomeAdapter.OnLongClickListener {
+            viewModel.displayPropertyDetailsLongClick(it)
         })
 
         viewModel.navigateToSelectedProperty.observe(this, Observer {
@@ -37,6 +40,14 @@ class HomeFragment : Fragment() {
                 this.findNavController()
                     .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
                 viewModel.displayPropertyDetailsComplete()
+            }
+        })
+
+        viewModel.navigateToUpdateProperty.observe(this, Observer {
+            if (it != null) {
+                this.findNavController()
+                    .navigate(HomeFragmentDirections.actionHomeFragmentToUpdateFragment(it))
+                viewModel.displayPropertyUpdateComplete()
             }
         })
 
