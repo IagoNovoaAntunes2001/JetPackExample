@@ -38,7 +38,7 @@ class DetailViewModel(
         coroutineScope.launch {
             val deleteItem = repository.deleteDetail(idToDelete)
             try {
-                val deleteAwait = deleteItem.await()
+                deleteItem.await()
                 _statusMessage.value = Event("Deleted has been with success!")
             } catch (e: Exception) {
                 _statusMessage.value = Event("Deleted Error! ${e.printStackTrace()}")

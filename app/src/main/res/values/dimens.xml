@@ -9,6 +9,9 @@
     <dimen name="home_fragment_text_view_margin">20dp</dimen>
     <dimen name="home_fragment_text_view_horizontal_baias">24sp</dimen>
 
+    <dimen name="register_fragment_marginBottom_editText">24sp</dimen>
+    <dimen name="register_fragment_ems_editText">10</dimen>
+
     <dimen name="text_size_title">24sp</dimen>
     <dimen name="text_size_subtitle">16sp</dimen>
     <dimen name="text_size_margin">10dp</dimen>
@@ -21,6 +24,8 @@
     <dimen name="list_item_card_view_margin">10dp</dimen>
 
     <dimen name="button_margin">30dp</dimen>
+
+    <dimen name="margin_nav_header">20dp</dimen>
 
     <dimen name="zero_dp">0dp</dimen>
 

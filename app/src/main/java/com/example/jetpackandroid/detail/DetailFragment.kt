@@ -14,6 +14,7 @@ import com.example.jetpackandroid.network.service.HomeApi
 import com.example.jetpackandroid.repository.detail.DetailRepository
 
 class DetailFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
