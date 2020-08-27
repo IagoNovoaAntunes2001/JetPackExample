@@ -11,6 +11,6 @@ class RegisterViewModelFactory(private val application: Application, private val
         if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(application, repository) as T
         }
-        throw IllegalArgumentException("")
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

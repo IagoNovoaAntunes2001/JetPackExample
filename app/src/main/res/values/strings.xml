@@ -16,6 +16,8 @@
     <string name="fragment_register_albumId">Album ID</string>
     <string name="fragment_register_button_send">Send</string>
 
+    <string name="fragment_update_button_send">Update</string>
+
     <string name="id_menu_show_rules">Show the rules</string>
     <string name="id_menu_about">About</string>
     <string name="id_menu_add">Add new item</string>

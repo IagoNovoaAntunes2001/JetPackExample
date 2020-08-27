@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.jetpackandroid.network.model.PhotosItem
 import com.example.jetpackandroid.repository.register.RegisterRepositoryContract
 import com.example.jetpackandroid.utils.Event
+import com.example.jetpackandroid.utils.verifyFields
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -39,7 +40,13 @@ class RegisterViewModel(
         if (!verifyFieldsIsEmpty()) return
 
         coroutineScope.launch {
-            val itemToSend = PhotosItem(0, inputTitle.value.toString(), inputUrl.value.toString(), inputThumbUrl.value.toString(), Integer.parseInt(inputAlbumId.value.toString()))
+            val itemToSend = PhotosItem(
+                0,
+                inputTitle.value.toString(),
+                inputUrl.value.toString(),
+                inputThumbUrl.value.toString(),
+                Integer.parseInt(inputAlbumId.value.toString())
+            )
             val postItem = repository.postItem(itemToSend)
             try {
                 val itemSended = postItem.await()
@@ -51,6 +58,10 @@ class RegisterViewModel(
     }
 
     private fun verifyFieldsIsEmpty(): Boolean {
+        return isFieldsEmpety()
+    }
+
+    private fun isFieldsEmpety(): Boolean {
         if (inputTitle.value == null || inputTitle.value.toString().isEmpty()) {
             _statusMessage.value = Event("Please enter title's name")
             return false

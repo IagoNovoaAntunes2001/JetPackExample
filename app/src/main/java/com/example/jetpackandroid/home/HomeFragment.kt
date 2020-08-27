@@ -1,7 +1,6 @@
 package com.example.jetpackandroid.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -11,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.jetpackandroid.R
 import com.example.jetpackandroid.databinding.FragmentHomeBinding
+import com.example.jetpackandroid.home.adapter.HomeAdapter
 import com.example.jetpackandroid.network.service.HomeApi
 import com.example.jetpackandroid.repository.home.HomeRepository
 
@@ -29,11 +29,14 @@ class HomeFragment : Fragment() {
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater)
 
-        binding.recyclerViewPhotos.adapter = HomeAdapter(HomeAdapter.OnClickListener {
-            viewModel.displayPropertyDetails(it)
-        }, HomeAdapter.OnLongClickListener {
-            viewModel.displayPropertyDetailsLongClick(it)
-        })
+        binding.recyclerViewPhotos.adapter =
+            HomeAdapter(
+                HomeAdapter.OnClickListener {
+                    viewModel.displayPropertyDetails(it)
+                },
+                HomeAdapter.OnLongClickListener {
+                    viewModel.displayPropertyDetailsLongClick(it)
+                })
 
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if (it != null) {

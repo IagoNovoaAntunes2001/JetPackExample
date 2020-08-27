@@ -1,8 +1,8 @@
 package com.example.jetpackandroid.repository.detail
 
-import com.example.jetpackandroid.network.model.ResponseDelete
+import com.example.jetpackandroid.network.model.ResponseDefault
 import kotlinx.coroutines.Deferred
 
 interface DetailRepositoryContract {
-    fun deleteDetail(id: Int): Deferred<ResponseDelete>
+    fun deleteDetail(id: Int): Deferred<ResponseDefault>
 }

@@ -4,6 +4,6 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ResponseDelete (
+data class ResponseDefault (
     var id: String = ""
 ) : Parcelable

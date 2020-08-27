@@ -3,21 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.example.jetpackandroid.update.UpdateViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".update.UpdateFragment">
+        tools:context=".register.RegisterFragment">
 
-
-        <TextView
-            android:id="@+id/textView"
+        <Button
+            android:id="@+id/postButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="169dp"
-            android:layout_marginLeft="169dp"
-            android:layout_marginBottom="340dp"
-            android:text="Update fragment"
+            android:text="@string/fragment_update_button_send"
+            android:onClick="@{() -> myViewModel.updateButton()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAlbumId" />
+
+        <EditText
+            android:id="@+id/editTextUrl"
+            style="@style/EditTextRegister"
+            android:autofillHints="no"
+            android:hint="@string/fragment_register_url"
+            android:inputType="textUri"
+            android:text="@={myViewModel.inputUrl}"
+            app:layout_constraintBottom_toTopOf="@+id/editTextThumbUrl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTitle"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/editTextThumbUrl"
+            style="@style/EditTextRegister"
+            android:hint="@string/fragment_register_thumb"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:text="@={myViewModel.inputThumbUrl}"
+            app:layout_constraintBottom_toTopOf="@+id/editTextAlbumId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUrl" />
+
+        <EditText
+            android:id="@+id/editTextAlbumId"
+            style="@style/EditTextRegister"
+            android:hint="@string/fragment_register_albumId"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@={myViewModel.inputAlbumId}"
+            app:layout_constraintBottom_toTopOf="@+id/postButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextThumbUrl" />
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            style="@style/EditTextRegister"
+            android:hint="@string/fragment_register_title"
+            android:importantForAutofill="no"
+            android:inputType="none|textPersonName|text"
+            android:text="@={myViewModel.inputTitle}"
+            app:layout_constraintBottom_toTopOf="@+id/editTextUrl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

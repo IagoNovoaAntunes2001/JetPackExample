@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jetpackandroid.R
-import com.example.jetpackandroid.home.HomeAdapter
+import com.example.jetpackandroid.home.adapter.HomeAdapter
 import com.example.jetpackandroid.network.model.PhotosItem
 
 @BindingAdapter("imageUrl")
