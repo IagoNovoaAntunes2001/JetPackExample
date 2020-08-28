@@ -1,10 +1,9 @@
-package com.example.jetpackandroid.home
+package com.example.jetpackandroid.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.jetpackandroid.network.model.PhotosItem
-import com.example.jetpackandroid.repository.home.HomeRepository
 import com.example.jetpackandroid.repository.home.HomeRepositoryContract
 import com.example.jetpackandroid.utils.HomeApiStatus
 import kotlinx.coroutines.CoroutineScope

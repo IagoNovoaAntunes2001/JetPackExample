@@ -1,15 +1,17 @@
 package com.example.jetpackandroid.utils
 
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jetpackandroid.R
-import com.example.jetpackandroid.home.adapter.HomeAdapter
 import com.example.jetpackandroid.network.model.PhotosItem
+import com.example.jetpackandroid.ui.home.adapter.HomeAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -45,6 +47,21 @@ fun bindStatus(statusImageView: ImageView, status: HomeApiStatus?) {
         }
         HomeApiStatus.DONE -> {
             statusImageView.visibility = View.GONE
+        }
+    }
+}
+
+@BindingAdapter("homeApiStatusTextView")
+fun bindStatusTexts(statusEditText: TextView, status: HomeApiStatus?) {
+    when (status) {
+        HomeApiStatus.LOADING -> {
+            statusEditText.visibility = View.GONE
+        }
+        HomeApiStatus.ERROR -> {
+            statusEditText.visibility = View.GONE
+        }
+        HomeApiStatus.DONE -> {
+            statusEditText.visibility = View.VISIBLE
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.home.adapter
+package com.example.jetpackandroid.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jetpackandroid.databinding.ListItemBinding
 import com.example.jetpackandroid.network.model.PhotosItem
 
-class HomeAdapter(private val onClickListener: OnClickListener, private val onLongClickListener: OnLongClickListener) : ListAdapter<PhotosItem, HomeAdapter.HomeViewHolder>(
+class HomeAdapter(
+    private val onClickListener: OnClickListener,
+    private val onLongClickListener: OnLongClickListener
+) : ListAdapter<PhotosItem, HomeAdapter.HomeViewHolder>(
     DiffCallBack
 ) {
 

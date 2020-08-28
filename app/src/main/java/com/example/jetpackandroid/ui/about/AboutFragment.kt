@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.about
+package com.example.jetpackandroid.ui.about
 
 import android.os.Bundle
 import android.view.LayoutInflater

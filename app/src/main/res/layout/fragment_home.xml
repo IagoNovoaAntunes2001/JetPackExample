@@ -7,15 +7,15 @@
 
         <variable
             name="viewModel"
-            type="com.example.jetpackandroid.home.HomeViewModel" />
+            type="com.example.jetpackandroid.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/ConstraintLayout"
         style="@style/ConstraintMatchParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPhotos"
@@ -35,12 +35,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subtitle" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title"
             style="@style/TextViewTheme_title"
             android:text="@string/fragment_home_title"
+            app:homeApiStatusTextView="@{viewModel.status}"
             app:layout_constraintBottom_toTopOf="@+id/subtitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +53,7 @@
             android:id="@+id/subtitle"
             style="@style/TextViewTheme_subtitle"
             android:text="@string/fragment_home_details"
+            app:homeApiStatusTextView="@{viewModel.status}"
             app:layout_constraintBottom_toTopOf="@+id/recyclerViewPhotos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

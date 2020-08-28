@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -33,13 +33,6 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="EditTextRegister">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/register_fragment_marginBottom_editText</item>
-        <item name="android:ems">10</item>
-    </style>
-
     <style name="NavigationView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -51,6 +44,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/button_margin</item>
         <item name="android:background">@color/colorRed</item>
+    </style>
+
+    <style name="StyleButtonSended">
+        <item name="android:layout_width">@dimen/zero_dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="ListItemLinear">
@@ -123,8 +123,8 @@
     </style>
 
     <style name="Image_status">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/home_fragment_image_width_height</item>
+        <item name="android:layout_width">@dimen/home_fragment_image_width_height</item>
     </style>
 
     <style name="ImageNavHeader">
@@ -136,6 +136,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">@dimen/zero_dp</item>
         <item name="android:layout_margin">@dimen/detail_fragment_margin</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/zero_dp</item>
+        <item name="android:layout_margin">@dimen/update_fragment_margin</item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/colorWhite</item>
     </style>
 
 </resources>

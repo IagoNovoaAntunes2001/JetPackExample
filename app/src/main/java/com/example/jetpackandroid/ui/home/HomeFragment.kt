@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.home
+package com.example.jetpackandroid.ui.home
 
 import android.os.Bundle
 import android.view.*
@@ -10,16 +10,17 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.jetpackandroid.R
 import com.example.jetpackandroid.databinding.FragmentHomeBinding
-import com.example.jetpackandroid.home.adapter.HomeAdapter
 import com.example.jetpackandroid.network.service.HomeApi
 import com.example.jetpackandroid.repository.home.HomeRepository
+import com.example.jetpackandroid.ui.home.adapter.HomeAdapter
 
 class HomeFragment : Fragment() {
 
     private val viewModel: HomeViewModel by lazy {
         val repository =
             HomeRepository(HomeApi.RETROFIT_SERVICE)
-        val factory = HomeViewModelFactory(repository)
+        val factory =
+            HomeViewModelFactory(repository)
         ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
     }
 
@@ -41,7 +42,11 @@ class HomeFragment : Fragment() {
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if (it != null) {
                 this.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
+                    .navigate(
+                        HomeFragmentDirections.actionHomeFragmentToDetailFragment(
+                            it
+                        )
+                    )
                 viewModel.displayPropertyDetailsComplete()
             }
         })
@@ -49,13 +54,17 @@ class HomeFragment : Fragment() {
         viewModel.navigateToUpdateProperty.observe(this, Observer {
             if (it != null) {
                 this.findNavController()
-                    .navigate(HomeFragmentDirections.actionHomeFragmentToUpdateFragment(it))
+                    .navigate(
+                        HomeFragmentDirections.actionHomeFragmentToUpdateFragment(
+                            it
+                        )
+                    )
                 viewModel.displayPropertyUpdateComplete()
             }
         })
 
         binding.viewModel = viewModel
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         setHasOptionsMenu(true)
         return binding.root
     }

@@ -1,19 +1,16 @@
-package com.example.jetpackandroid.register
+package com.example.jetpackandroid.ui.register
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.jetpackandroid.network.model.PhotosItem
 import com.example.jetpackandroid.repository.register.RegisterRepositoryContract
 import com.example.jetpackandroid.utils.Event
-import com.example.jetpackandroid.utils.verifyFields
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import kotlin.reflect.jvm.internal.impl.resolve.constants.StringValue
 
 class RegisterViewModel(
     application: Application,
@@ -74,8 +71,18 @@ class RegisterViewModel(
         } else if (inputAlbumId.value == null || inputAlbumId.value.toString().isEmpty()) {
             _statusMessage.value = Event("Please enter album's id")
             return false
+        } else if (isaNumber(inputAlbumId.value.toString())) {
+            _statusMessage.value = Event("Please enter with a number, not a string!")
+            return false
         }
         return true
+    }
+
+    private fun isaNumber(number: String): Boolean {
+        if (number.contains("^[a-Z]")) {
+            return true
+        }
+        return false
     }
 
     override fun onCleared() {

@@ -3,7 +3,7 @@
 
     <string name="homefragment_text">Home Fragment</string>
     <string name="fragment_home_title">Title</string>
-    <string name="fragment_home_details">Click to see more details</string>
+    <string name="fragment_home_details">Click to see more details or Long click to update the select item</string>
 
     <string name="fragment_detail_title">Title</string>
     <string name="fragment_detail_ID">ID image</string>
@@ -31,5 +31,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description_splash">Image of the splash Screen</string>
 
 </resources>

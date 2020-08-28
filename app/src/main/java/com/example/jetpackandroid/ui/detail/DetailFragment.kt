@@ -1,4 +1,4 @@
-package com.example.jetpackandroid.detail
+package com.example.jetpackandroid.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,12 +22,19 @@ class DetailFragment : Fragment() {
         val application = requireNotNull(activity).application
         val binding = FragmentDetailBinding.inflate(inflater)
 
-        val photosProperty = DetailFragmentArgs.fromBundle(requireArguments()).seleceted
+        val photosProperty = DetailFragmentArgs.fromBundle(
+            requireArguments()
+        ).seleceted
 
         val repository =
             DetailRepository(HomeApi.RETROFIT_SERVICE)
 
-        val viewModelFactory = DetailViewModelFactory(application, photosProperty, repository)
+        val viewModelFactory =
+            DetailViewModelFactory(
+                application,
+                photosProperty,
+                repository
+            )
         val viewModel =
             ViewModelProviders.of(this, viewModelFactory).get(DetailViewModel::class.java)
 
