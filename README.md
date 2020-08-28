@@ -11,6 +11,11 @@ Libraries used in this project were:
 - Glide(Photo): https://github.com/bumptech/glide 
 - ViewModel/LiveData/Lifecycle/processor: https://developer.android.com/jetpack/androidx/releases/lifecycle
 
+Utiliy links:
+
+- FlatIcon: https://www.flaticon.com
+- COOLORS: https://coolors.co
+
 Where you can search and learn about Jetpack(Documentation oficial of the Android)
 Documentation oficial: https://developer.android.com/jetpack
 get started: https://developer.android.com/jetpack/getting-started
