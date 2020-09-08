@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.jetpackandroid.databinding.FragmentDetailBinding
 import com.example.jetpackandroid.network.service.HomeApi
@@ -35,8 +35,9 @@ class DetailFragment : Fragment() {
                 photosProperty,
                 repository
             )
+
         val viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(DetailViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(DetailViewModel::class.java)
 
         viewModel.statusMessage.observe(this, Observer { messsage ->
             messsage.getContentIfNotHandled()?.let {
@@ -45,7 +46,7 @@ class DetailFragment : Fragment() {
             }
         })
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         binding.myViewModel = viewModel
 
         return binding.root

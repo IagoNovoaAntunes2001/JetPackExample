@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.jetpackandroid.databinding.FragmentUpdateBinding
 import com.example.jetpackandroid.network.service.HomeApi
@@ -40,7 +40,7 @@ class UpdateFragment : Fragment() {
             )
 
         val viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(UpdateViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(UpdateViewModel::class.java)
 
         viewModel.statusMessage.observe(this, Observer {
             it.getContentIfNotHandled()?.let { message ->

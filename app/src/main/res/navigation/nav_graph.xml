@@ -30,7 +30,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.jetpackandroid.ui.detail.DetailFragment"
-        android:label="Detail"
+        android:label="@string/detail_fragment_title"
         tools:layout="@layout/fragment_detail">
         <argument
             android:name="seleceted"
@@ -39,25 +39,25 @@
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.example.jetpackandroid.ui.rules.RulesFragment"
-        android:label="Rules"
+        android:label="@string/rules_fragment_title"
         tools:layout="@layout/fragment_rules" />
 
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.jetpackandroid.ui.about.AboutFragment"
-        android:label="About"
+        android:label="@string/about_fragment_title"
         tools:layout="@layout/fragment_about" />
 
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.jetpackandroid.ui.register.RegisterFragment"
-        android:label="Register"
+        android:label="@string/register_fragment_title"
         tools:layout="@layout/fragment_register" />
 
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.example.jetpackandroid.ui.update.UpdateFragment"
-        android:label="Update"
+        android:label="@string/update_fragment_title"
         tools:layout="@layout/fragment_update">
         <argument
             android:name="longClickItem"

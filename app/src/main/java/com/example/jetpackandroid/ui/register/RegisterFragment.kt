@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.jetpackandroid.databinding.FragmentRegisterBinding
 import com.example.jetpackandroid.network.service.HomeApi
@@ -35,7 +35,7 @@ class RegisterFragment : Fragment() {
             )
 
         val viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(RegisterViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(RegisterViewModel::class.java)
 
         viewModel.statusMessage.observe(this, Observer {
             it.getContentIfNotHandled()?.let { message ->
