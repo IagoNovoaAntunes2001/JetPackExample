@@ -17,5 +17,5 @@ Utiliy links:
 - COOLORS: https://coolors.co
 
 Where you can search and learn about Jetpack(Documentation oficial of the Android)
-Documentation oficial: https://developer.android.com/jetpack
-get started: https://developer.android.com/jetpack/getting-started
+- Documentation oficial: https://developer.android.com/jetpack
+- get started: https://developer.android.com/jetpack/getting-started
